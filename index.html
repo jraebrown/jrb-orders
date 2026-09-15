@@ -8,7 +8,7 @@
   /* Base styles integrated from price_list (2).html[span_4](start_span)[span_4](end_span) */
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  html, body {
+  html {
     height: 100%;
   }
 
@@ -18,7 +18,7 @@
     color: #fff;
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
+    min-height: 100vh;
   }
 
   .container {
@@ -458,15 +458,15 @@ const products = [
   {id:2,  name:"Rush Aroma (2011)",                     size:"One Size", price:4.90,  orig:7.00,  inStore:64,  other:414,  img:"aromas/Rush Aroma (2011).jpg"},
   {id:3,  name:"Titus Extra Strong Aroma",              size:"One Size", price:4.90,  orig:7.00,  inStore:62,  other:1582, img:"https://poppersplus.co.uk/146-large_default/titus-extra-strong.jpg"},
   {id:4,  name:"Titus Strong Aroma",                    size:"One Size", price:4.90,  orig:7.00,  inStore:44,  other:428,  img:"https://thepoppershop.co.uk/wp-content/uploads/2024/11/Titus_Strong_Popp[...]
-  {id:5,  name:"Liquid Gold XL 15ml",                   size:"15ml",     price:4.90,  orig:7.00,  inStore:39,  other:526,  img:"https://thepoppershop.co.uk/wp-content/uploads/2024/11/XL_Gold_Poppers_O[...]
+  {id:5,  name:"Liquid Gold XL 15ml",                   size:"15ml",     price:4.90,  orig:7.00,  inStore:39,  other:526,  img:"https://thepoppershop.co.uk/wp-content/uploads/2024/11/XL_Gold_Popp[...]
   {id:6,  name:"TNT 2009",                              size:"One Size", price:4.90,  orig:7.00,  inStore:60,  other:922,  img:"aromas/TNT.jpg"},
-  {id:7,  name:"Max Gold",                              size:"One Size", price:4.90,  orig:7.00,  inStore:55,  other:691,  img:"https://thepoppershop.co.uk/wp-content/uploads/2024/11/Max_Gold_Poppers_[...]
+  {id:7,  name:"Max Gold",                              size:"One Size", price:4.90,  orig:7.00,  inStore:55,  other:691,  img:"https://thepoppershop.co.uk/wp-content/uploads/2024/11/Max_Gold_Pop[...]
   {id:8,  name:"Xtreme 2009",                           size:"One Size", price:5.59,  orig:7.99,  inStore:70,  other:2942, img:"https://poppersetc.co.za/wp-content/uploads/2022/08/Xtreme_25ml.jpg"},
-  {id:9,  name:"O-Juice Aroma",                         size:"One Size", price:5.59,  orig:7.99,  inStore:49,  other:330,  img:"https://thepoppershop.co.uk/wp-content/uploads/2024/11/O_Juice_Poppers_O[...]
-  {id:10, name:"Amsterdam Gold 25ml",                   size:"25ml",     price:5.59,  orig:7.99,  inStore:20,  other:445,  img:"https://www.roomaromas.co.uk/cdn/shop/files/original-amsterdam-gold-extr[...]
+  {id:9,  name:"O-Juice Aroma",                         size:"One Size", price:5.59,  orig:7.99,  inStore:49,  other:330,  img:"https://thepoppershop.co.uk/wp-content/uploads/2024/11/O_Juice_Popp[...]
+  {id:10, name:"Amsterdam Gold 25ml",                   size:"25ml",     price:5.59,  orig:7.99,  inStore:20,  other:445,  img:"https://www.roomaromas.co.uk/cdn/shop/files/original-amsterdam-gold[...]
   {id:11, name:"Mr. S Leather Aroma 25ml",              size:"25ml",     price:9.79,  orig:13.99, inStore:54,  other:416,  img:"aromas/mr_s_leather.jpg"},
   {id:12, name:"Hard On Aroma 25ml",                    size:"25ml",     price:6.99,  orig:9.99,  inStore:13,  other:121,  img:"aromas/harden.jpg"},
-  {id:13, name:"Dogs Bollock 10ml",                     size:"10ml",     price:3.50,  orig:5.00,  inStore:12,  other:0,    img:"https://www.poppersupershop.com/media/catalog/product/cache/6c43fdaad6ce[...]
+  {id:13, name:"Dogs Bollock 10ml",                     size:"10ml",     price:3.50,  orig:5.00,  inStore:12,  other:0,    img:"https://www.poppersupershop.com/media/catalog/product/cache/6c43fda[...]
   {id:14, name:"Fist Propyl Pure 10ml",                 size:"10ml",     price:4.19,  orig:5.99,  inStore:32,  other:214,  img:"aromas/Fist Propyl 10ml.jpg"},
   {id:15, name:"Fist Pentyl 10ml",                      size:"10ml",     price:8.39,  orig:11.99, inStore:8,   other:8,    img:"aromas/fist pentyl 10ml.png"},
   {id:16, name:"Oink Oink 10ml",                        size:"10ml",     price:3.50,  orig:5.00,  inStore:0,   other:13,   img:"aromas/oink 10ml.png"},
@@ -478,7 +478,7 @@ const products = [
   {id:22, name:"Xtreme Glow 25ml",                      size:"25ml",     price:5.59,  orig:7.99,  inStore:67,  other:1004, img:"aromas/xtreme_glow.png"},
   {id:23, name:"Xtreme Power Aroma 25ml",               size:"25ml",     price:9.79,  orig:13.99, inStore:54,  other:843,  img:"aromas/xtreme_power.png"},
   {id:24, name:"Berlin Aroma 25ml",                     size:"25ml",     price:5.59,  orig:7.99,  inStore:20,  other:334,  img:"aromas/berlin_xxx_hardcore.png"},
-  {id:25, name:"Pig Red Aroma 25ml",                    size:"25ml",     price:7.69,  orig:10.99, inStore:36,  other:74,   img:"https://thepoppershop.co.uk/wp-content/uploads/2024/11/Pig_Red_Poppers_2[...]
+  {id:25, name:"Pig Red Aroma 25ml",                    size:"25ml",     price:7.69,  orig:10.99, inStore:36,  other:74,   img:"https://thepoppershop.co.uk/wp-content/uploads/2024/11/Pig_Red_Popp[...]
   {id:26, name:"ISO Blue Aroma 25ml",                   size:"25ml",     price:7.69,  orig:10.99, inStore:63,  other:298,  img:"aromas/isoblue.png"},
   {id:27, name:"Jungle Juice Black Label Extreme 30ml", size:"30ml",     price:10.49, orig:14.99, inStore:0,   other:32,   img:"aromas/jungle_juice_black_label.png"},
   {id:28, name:"Power Rush 25ml",                       size:"25ml",     price:6.65,  orig:9.50,  inStore:0,   other:4,    img:"aromas/power_rush.png"},
@@ -486,8 +486,8 @@ const products = [
   {id:30, name:"Raw XXX 10ml",                          size:"10ml",     price:4.20,  orig:6.00,  inStore:0,   other:30,   img:"aromas/raw_max_strength.png"},
   
   // Page 2
-  {id:31, name:"Buzz 10ml",                             size:"10ml",     price:4.20,  orig:6.00,  inStore:0,   other:16,   img:"https://thepoppershop.co.uk/wp-content/uploads/2024/11/Buzz_Poppers_For_[...]
-  {id:32, name:"Bang 10ml",                             size:"10ml",     price:3.50,  orig:5.00,  inStore:26,  other:18,   img:"https://www.poppersupershop.com/media/catalog/product/cache/6c43fdaad6ce[...]
+  {id:31, name:"Buzz 10ml",                             size:"10ml",     price:4.20,  orig:6.00,  inStore:0,   other:16,   img:"https://thepoppershop.co.uk/wp-content/uploads/2024/11/Buzz_Poppers[...]
+  {id:32, name:"Bang 10ml",                             size:"10ml",     price:3.50,  orig:5.00,  inStore:26,  other:18,   img:"https://www.poppersupershop.com/media/catalog/product/cache/6c43fda[...]
   {id:33, name:"Throb Hard XXX 10ml",                   size:"10ml",     price:3.50,  orig:5.00,  inStore:0,   other:2,    img:"aromas/throb_hard.jpg"},
   {id:34, name:"Purple Haze 10ml",                      size:"10ml",     price:3.50,  orig:5.00,  inStore:20,  other:60,   img:"aromas/purple_haze.jpg"},
   {id:35, name:"Hardcore 10ml",                         size:"10ml",     price:3.50,  orig:5.00,  inStore:34,  other:46,   img:"aromas/hard_core_10ml.jpg"},
@@ -509,7 +509,7 @@ const products = [
   {id:51, name:"Colt Retro 25ml",                       size:"25ml",     price:9.09,  orig:12.99, inStore:48,  other:361,  img:"aromas/colt_brown_bottle.jpg"},
   {id:52, name:"Jungle Juice Platinum Boxed 30ml HEXYL",size:"30ml",     price:9.79,  orig:13.99, inStore:111, other:191,  img:"aromas/jungle_juice_platinum_alt.jpg"},
   {id:53, name:"Jungle Juice Platinum Retro 25ml",      size:"25ml",     price:9.09,  orig:12.99, inStore:25,  other:256,  img:"aromas/jungle_juice_platinum_original.jpg"},
-  {id:54, name:"Bator Pentyl 25ml",                     size:"25ml",     price:7.69,  orig:10.99, inStore:19,  other:122,  img:"https://twistedbeastpoppers.com/cdn/shop/files/Bator.jpg?v=1749213360"},
+  {id:54, name:"Bator Pentyl 25ml",                     size:"25ml",     price:7.69,  orig:10.99, inStore:19,  other:122,  img:"https://twistedbeastpoppers.com/cdn/shop/files/Bator.jpg?v=17492133[...]
   {id:55, name:"Brain Drain Pentyl 25ml",               size:"25ml",     price:7.69,  orig:10.99, inStore:10,  other:99,   img:"aromas/brain_drain.jpg"},
   {id:56, name:"Hypno Pentyl 25ml",                     size:"25ml",     price:7.69,  orig:10.99, inStore:35,  other:301,  img:"aromas/hypno.jpg"},
   {id:57, name:"Sissy Pentyl 25ml",                     size:"25ml",     price:7.69,  orig:10.99, inStore:25,  other:54,   img:"aromas/sissy.jpg"},
