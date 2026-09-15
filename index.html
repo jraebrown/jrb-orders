@@ -347,6 +347,7 @@
     flex: 1; min-width: 200px;
     padding: 12px; text-align: center; border-radius: 6px; text-decoration: none; font-weight: bold;
     display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer; border: none; font-size: 12pt;
+    white-space: nowrap;
   }
   
   .btn-whatsapp { background: #25D366; color: white; }
@@ -446,16 +447,16 @@ const products = [
   {id:1,  name:"English Aroma",                         size:"One Size", price:5.59,  orig:7.99,  inStore:12,  other:341,  img:"aromas/English.jpg"},
   {id:2,  name:"Rush Aroma (2011)",                     size:"One Size", price:4.90,  orig:7.00,  inStore:64,  other:414,  img:"aromas/Rush Aroma (2011).jpg"},
   {id:3,  name:"Titus Extra Strong Aroma",              size:"One Size", price:4.90,  orig:7.00,  inStore:62,  other:1582, img:"https://poppersplus.co.uk/146-large_default/titus-extra-strong.jpg"},
-  {id:4,  name:"Titus Strong Aroma",                    size:"One Size", price:4.90,  orig:7.00,  inStore:44,  other:428,  img:"https://thepoppershop.co.uk/wp-content/uploads/2024/11/Titus_Strong_Poppers_For_Sale_UK_Shop-5.jpg"},
-  {id:5,  name:"Liquid Gold XL 15ml",                   size:"15ml",     price:4.90,  orig:7.00,  inStore:39,  other:526,  img:"https://thepoppershop.co.uk/wp-content/uploads/2024/11/XL_Gold_Poppers_Online_Shop_Sale-10.jpg"},
+  {id:4,  name:"Titus Strong Aroma",                    size:"One Size", price:4.90,  orig:7.00,  inStore:44,  other:428,  img:"https://thepoppershop.co.uk/wp-content/uploads/2024/11/Titus_Strong_Popp[...]
+  {id:5,  name:"Liquid Gold XL 15ml",                   size:"15ml",     price:4.90,  orig:7.00,  inStore:39,  other:526,  img:"https://thepoppershop.co.uk/wp-content/uploads/2024/11/XL_Gold_Poppers_O[...]
   {id:6,  name:"TNT 2009",                              size:"One Size", price:4.90,  orig:7.00,  inStore:60,  other:922,  img:"aromas/TNT.jpg"},
-  {id:7,  name:"Max Gold",                              size:"One Size", price:4.90,  orig:7.00,  inStore:55,  other:691,  img:"https://thepoppershop.co.uk/wp-content/uploads/2024/11/Max_Gold_Poppers_Buy_Online_UK.jpg"},
+  {id:7,  name:"Max Gold",                              size:"One Size", price:4.90,  orig:7.00,  inStore:55,  other:691,  img:"https://thepoppershop.co.uk/wp-content/uploads/2024/11/Max_Gold_Poppers_[...]
   {id:8,  name:"Xtreme 2009",                           size:"One Size", price:5.59,  orig:7.99,  inStore:70,  other:2942, img:"https://poppersetc.co.za/wp-content/uploads/2022/08/Xtreme_25ml.jpg"},
-  {id:9,  name:"O-Juice Aroma",                         size:"One Size", price:5.59,  orig:7.99,  inStore:49,  other:330,  img:"https://thepoppershop.co.uk/wp-content/uploads/2024/11/O_Juice_Poppers_Online_UK-5.jpg"},
-  {id:10, name:"Amsterdam Gold 25ml",                   size:"25ml",     price:5.59,  orig:7.99,  inStore:20,  other:445,  img:"https://www.roomaromas.co.uk/cdn/shop/files/original-amsterdam-gold-extra-strong-poppers-25ml-963127.webp?v=1733388149"},
+  {id:9,  name:"O-Juice Aroma",                         size:"One Size", price:5.59,  orig:7.99,  inStore:49,  other:330,  img:"https://thepoppershop.co.uk/wp-content/uploads/2024/11/O_Juice_Poppers_O[...]
+  {id:10, name:"Amsterdam Gold 25ml",                   size:"25ml",     price:5.59,  orig:7.99,  inStore:20,  other:445,  img:"https://www.roomaromas.co.uk/cdn/shop/files/original-amsterdam-gold-extr[...]
   {id:11, name:"Mr. S Leather Aroma 25ml",              size:"25ml",     price:9.79,  orig:13.99, inStore:54,  other:416,  img:"aromas/mr_s_leather.jpg"},
   {id:12, name:"Hard On Aroma 25ml",                    size:"25ml",     price:6.99,  orig:9.99,  inStore:13,  other:121,  img:"aromas/harden.jpg"},
-  {id:13, name:"Dogs Bollock 10ml",                     size:"10ml",     price:3.50,  orig:5.00,  inStore:12,  other:0,    img:"https://www.poppersupershop.com/media/catalog/product/cache/6c43fdaad6ce94922deeec5db487b9fc/d/o/dogs-bollocks-aroma.jpg"},
+  {id:13, name:"Dogs Bollock 10ml",                     size:"10ml",     price:3.50,  orig:5.00,  inStore:12,  other:0,    img:"https://www.poppersupershop.com/media/catalog/product/cache/6c43fdaad6ce[...]
   {id:14, name:"Fist Propyl Pure 10ml",                 size:"10ml",     price:4.19,  orig:5.99,  inStore:32,  other:214,  img:"aromas/Fist Propyl 10ml.jpg"},
   {id:15, name:"Fist Pentyl 10ml",                      size:"10ml",     price:8.39,  orig:11.99, inStore:8,   other:8,    img:"aromas/fist pentyl 10ml.png"},
   {id:16, name:"Oink Oink 10ml",                        size:"10ml",     price:3.50,  orig:5.00,  inStore:0,   other:13,   img:"aromas/oink 10ml.png"},
@@ -467,7 +468,7 @@ const products = [
   {id:22, name:"Xtreme Glow 25ml",                      size:"25ml",     price:5.59,  orig:7.99,  inStore:67,  other:1004, img:"aromas/xtreme_glow.png"},
   {id:23, name:"Xtreme Power Aroma 25ml",               size:"25ml",     price:9.79,  orig:13.99, inStore:54,  other:843,  img:"aromas/xtreme_power.png"},
   {id:24, name:"Berlin Aroma 25ml",                     size:"25ml",     price:5.59,  orig:7.99,  inStore:20,  other:334,  img:"aromas/berlin_xxx_hardcore.png"},
-  {id:25, name:"Pig Red Aroma 25ml",                    size:"25ml",     price:7.69,  orig:10.99, inStore:36,  other:74,   img:"https://thepoppershop.co.uk/wp-content/uploads/2024/11/Pig_Red_Poppers_25ml_Strong_Poppers-550x550.jpg"},
+  {id:25, name:"Pig Red Aroma 25ml",                    size:"25ml",     price:7.69,  orig:10.99, inStore:36,  other:74,   img:"https://thepoppershop.co.uk/wp-content/uploads/2024/11/Pig_Red_Poppers_2[...]
   {id:26, name:"ISO Blue Aroma 25ml",                   size:"25ml",     price:7.69,  orig:10.99, inStore:63,  other:298,  img:"aromas/isoblue.png"},
   {id:27, name:"Jungle Juice Black Label Extreme 30ml", size:"30ml",     price:10.49, orig:14.99, inStore:0,   other:32,   img:"aromas/jungle_juice_black_label.png"},
   {id:28, name:"Power Rush 25ml",                       size:"25ml",     price:6.65,  orig:9.50,  inStore:0,   other:4,    img:"aromas/power_rush.png"},
@@ -475,8 +476,8 @@ const products = [
   {id:30, name:"Raw XXX 10ml",                          size:"10ml",     price:4.20,  orig:6.00,  inStore:0,   other:30,   img:"aromas/raw_max_strength.png"},
   
   // Page 2
-  {id:31, name:"Buzz 10ml",                             size:"10ml",     price:4.20,  orig:6.00,  inStore:0,   other:16,   img:"https://thepoppershop.co.uk/wp-content/uploads/2024/11/Buzz_Poppers_For_Sale_UK.jpg"},
-  {id:32, name:"Bang 10ml",                             size:"10ml",     price:3.50,  orig:5.00,  inStore:26,  other:18,   img:"https://www.poppersupershop.com/media/catalog/product/cache/6c43fdaad6ce94922deeec5db487b9fc/b/a/bang-aroma-10ml-10pack.jpg"},
+  {id:31, name:"Buzz 10ml",                             size:"10ml",     price:4.20,  orig:6.00,  inStore:0,   other:16,   img:"https://thepoppershop.co.uk/wp-content/uploads/2024/11/Buzz_Poppers_For_[...]
+  {id:32, name:"Bang 10ml",                             size:"10ml",     price:3.50,  orig:5.00,  inStore:26,  other:18,   img:"https://www.poppersupershop.com/media/catalog/product/cache/6c43fdaad6ce[...]
   {id:33, name:"Throb Hard XXX 10ml",                   size:"10ml",     price:3.50,  orig:5.00,  inStore:0,   other:2,    img:"aromas/throb_hard.jpg"},
   {id:34, name:"Purple Haze 10ml",                      size:"10ml",     price:3.50,  orig:5.00,  inStore:20,  other:60,   img:"aromas/purple_haze.jpg"},
   {id:35, name:"Hardcore 10ml",                         size:"10ml",     price:3.50,  orig:5.00,  inStore:34,  other:46,   img:"aromas/hard_core_10ml.jpg"},
@@ -678,7 +679,7 @@ function openModal(){
 
   document.getElementById('modal-actions').innerHTML = `
     <a href="${waUrl}" target="_blank" class="btn btn-whatsapp">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.[...]
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.341.469-.52.676-.095.11-.15.164-.15.164.088.088.24.249.425.439.141.137.289.282.49.51.379.374.63.733 1.055 1.242.52.652 1.026 1.268 1.815 2.051.878.878 1.754 1.664 2.592 2.368.379.327.738.64 1.08.927.22.182.43.36.645.527.236.186.496.389.795.389.277 0 .56-.161.788-.347 1.186-.972 1.923-1.576 2.517-2.207.52-.567.906-1.02 1.037-1.462.138-.484.14-1.255-.118-2.196-.27-.998-1.055-2.05-2.191-2.857-.53-.383-1.228-.74-1.985-.995-.468-.16-.98-.31-1.523-.31h-.075c-.503-.001-1.09.083-1.678.3z"/></svg>
       Send via WhatsApp
     </a>
     <a href="${mailUrl}" class="btn btn-email">
