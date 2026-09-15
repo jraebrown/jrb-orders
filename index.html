@@ -294,6 +294,7 @@
     align-items: center;
     justify-content: center;
     backdrop-filter: blur(5px);
+    overflow-y: auto;
   }
 
   #modal.active { display: flex; }
@@ -308,6 +309,7 @@
     overflow-y: auto;
     border: 1px solid rgba(255,255,255,0.2);
     box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    margin: auto;
   }
 
   .modal-content h2 { margin-bottom: 20px; color: #ffd600; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;}
@@ -344,10 +346,9 @@
   }
 
   .btn {
-    flex: 1; min-width: 200px;
+    flex: 1; min-width: 120px;
     padding: 12px; text-align: center; border-radius: 6px; text-decoration: none; font-weight: bold;
     display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer; border: none; font-size: 12pt;
-    white-space: nowrap;
   }
   
   .btn-whatsapp { background: #25D366; color: white; }
@@ -679,7 +680,7 @@ function openModal(){
 
   document.getElementById('modal-actions').innerHTML = `
     <a href="${waUrl}" target="_blank" class="btn btn-whatsapp">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.341.469-.52.676-.095.11-.15.164-.15.164.088.088.24.249.425.439.141.137.289.282.49.51.379.374.63.733 1.055 1.242.52.652 1.026 1.268 1.815 2.051.878.878 1.754 1.664 2.592 2.368.379.327.738.64 1.08.927.22.182.43.36.645.527.236.186.496.389.795.389.277 0 .56-.161.788-.347 1.186-.972 1.923-1.576 2.517-2.207.52-.567.906-1.02 1.037-1.462.138-.484.14-1.255-.118-2.196-.27-.998-1.055-2.05-2.191-2.857-.53-.383-1.228-.74-1.985-.995-.468-.16-.98-.31-1.523-.31h-.075c-.503-.001-1.09.083-1.678.3z"/></svg>
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.[...]
       Send via WhatsApp
     </a>
     <a href="${mailUrl}" class="btn btn-email">
