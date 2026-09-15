@@ -1,0 +1,275 @@
+
+const YOUR_WHATSAPP = "07311042835"; // ← REPLACE with your WhatsApp number (no + or spaces)
+const YOUR_EMAIL    = "me@jraebrown.com"; // ← REPLACE with your email address
+
+const products = [
+  // Page 1
+  {id:1,  name:"English Aroma",                         size:"One Size", price:5.59,  orig:7.99,  inStore:12,  other:341,  img:"uploaded_files/English.jpg"},
+  {id:2,  name:"Rush Aroma (2011)",                     size:"One Size", price:4.90,  orig:7.00,  inStore:64,  other:414,  img:"uploaded_files/Rush Aroma (2011).jpg"},
+  {id:3,  name:"Titus Extra Strong Aroma",              size:"One Size", price:4.90,  orig:7.00,  inStore:62,  other:1582, img:"https://poppersplus.co.uk/146-large_default/titus-extra-strong.jpg"},
+  {id:4,  name:"Titus Strong Aroma",                    size:"One Size", price:4.90,  orig:7.00,  inStore:44,  other:428,  img:"https://thepoppershop.co.uk/wp-content/uploads/2024/11/Titus_Strong_Poppers_For_Sale_UK_Shop-5.jpg"},
+  {id:5,  name:"Liquid Gold XL 15ml",                   size:"15ml",     price:4.90,  orig:7.00,  inStore:39,  other:526,  img:"https://thepoppershop.co.uk/wp-content/uploads/2024/11/XL_Gold_Poppers_Online_Shop_Sale-10.jpg"},
+  {id:6,  name:"TNT 2009",                              size:"One Size", price:4.90,  orig:7.00,  inStore:60,  other:922,  img:"uploaded_files/TNT.jpg"},
+  {id:7,  name:"Max Gold",                              size:"One Size", price:4.90,  orig:7.00,  inStore:55,  other:691,  img:"https://thepoppershop.co.uk/wp-content/uploads/2024/11/Max_Gold_Poppers_Buy_Online_UK.jpg"},
+  {id:8,  name:"Xtreme 2009",                           size:"One Size", price:5.59,  orig:7.99,  inStore:70,  other:2942, img:"https://poppersetc.co.za/wp-content/uploads/2022/08/Xtreme_25ml.jpg"},
+  {id:9,  name:"O-Juice Aroma",                         size:"One Size", price:5.59,  orig:7.99,  inStore:49,  other:330,  img:"https://thepoppershop.co.uk/wp-content/uploads/2024/11/O_Juice_Poppers_Online_UK-5.jpg"},
+  {id:10, name:"Amsterdam Gold 25ml",                   size:"25ml",     price:5.59,  orig:7.99,  inStore:20,  other:445,  img:"https://www.roomaromas.co.uk/cdn/shop/files/original-amsterdam-gold-extra-strong-poppers-25ml-963127.webp?v=1733388149"},
+  {id:11, name:"Mr. S Leather Aroma 25ml",              size:"25ml",     price:9.79,  orig:13.99, inStore:54,  other:416,  img:"uploaded_files/mr_s_leather.jpg"},
+  {id:12, name:"Hard On Aroma 25ml",                    size:"25ml",     price:6.99,  orig:9.99,  inStore:13,  other:121,  img:"uploaded_files/harden.jpg"},
+  {id:13, name:"Dogs Bollock 10ml",                     size:"10ml",     price:3.50,  orig:5.00,  inStore:12,  other:0,    img:"https://www.poppersupershop.com/media/catalog/product/cache/6c43fdaad6ce94922deeec5db487b9fc/d/o/dogs-bollocks-aroma.jpg"},
+  {id:14, name:"Fist Propyl Pure 10ml",                 size:"10ml",     price:4.19,  orig:5.99,  inStore:32,  other:214,  img:"uploaded_files/Fist Propyl 10ml.jpg"},
+  {id:15, name:"Fist Pentyl 10ml",                      size:"10ml",     price:8.39,  orig:11.99, inStore:8,   other:8,    img:"uploaded_files/fist pentyl 10ml.png"},
+  {id:16, name:"Oink Oink 10ml",                        size:"10ml",     price:3.50,  orig:5.00,  inStore:0,   other:13,   img:"uploaded_files/oink 10ml.png"},
+  {id:17, name:"Rosebud 25ml",                          size:"25ml",     price:8.39,  orig:11.99, inStore:15,  other:28,   img:"uploaded_files/rosebud.png"},
+  {id:18, name:"Jock Room 10ml",                        size:"10ml",     price:4.19,  orig:5.99,  inStore:12,  other:13,   img:"uploaded_files/jock.png"},
+  {id:19, name:"PUP 25ml",                              size:"25ml",     price:10.49, orig:14.99, inStore:0,   other:16,   img:"uploaded_files/pup.png"},
+  {id:20, name:"DAD Tom Taylor 25ml",                   size:"25ml",     price:8.39,  orig:11.99, inStore:0,   other:10,   img:"uploaded_files/dad.png"},
+  {id:21, name:"Potent Blue Aroma 25ml",                size:"25ml",     price:9.79,  orig:13.99, inStore:52,  other:2035, img:"uploaded_files/potent_blue.png"},
+  {id:22, name:"Xtreme Glow 25ml",                      size:"25ml",     price:5.59,  orig:7.99,  inStore:67,  other:1004, img:"uploaded_files/xtreme_glow.png"},
+  {id:23, name:"Xtreme Power Aroma 25ml",               size:"25ml",     price:9.79,  orig:13.99, inStore:54,  other:843,  img:"uploaded_files/xtreme_power.png"},
+  {id:24, name:"Berlin Aroma 25ml",                     size:"25ml",     price:5.59,  orig:7.99,  inStore:20,  other:334,  img:"uploaded_files/berlin_xxx_hardcore.png"},
+  {id:25, name:"Pig Red Aroma 25ml",                    size:"25ml",     price:7.69,  orig:10.99, inStore:36,  other:74,   img:"https://thepoppershop.co.uk/wp-content/uploads/2024/11/Pig_Red_Poppers_25ml_Strong_Poppers-550x550.jpg"},
+  {id:26, name:"ISO Blue Aroma 25ml",                   size:"25ml",     price:7.69,  orig:10.99, inStore:63,  other:298,  img:"uploaded_files/isoblue.png"},
+  {id:27, name:"Jungle Juice Black Label Extreme 30ml", size:"30ml",     price:10.49, orig:14.99, inStore:0,   other:32,   img:"uploaded_files/jungle_juice_black_label.png"},
+  {id:28, name:"Power Rush 25ml",                       size:"25ml",     price:6.65,  orig:9.50,  inStore:0,   other:4,    img:"uploaded_files/power_rush.png"},
+  {id:29, name:"Red Bullet 25ml",                       size:"25ml",     price:9.79,  orig:13.99, inStore:1,   other:33,   img:"uploaded_files/red_bullet.png"},
+  {id:30, name:"Raw XXX 10ml",                          size:"10ml",     price:4.20,  orig:6.00,  inStore:0,   other:30,   img:"uploaded_files/raw_max_strength.png"},
+  // Page 2
+  {id:31, name:"Buzz 10ml",                             size:"10ml",     price:4.20,  orig:6.00,  inStore:0,   other:16,   img:"https://thepoppershop.co.uk/wp-content/uploads/2024/11/Buzz_Poppers_For_Sale_UK.jpg"},
+  {id:32, name:"Bang 10ml",                             size:"10ml",     price:3.50,  orig:5.00,  inStore:26,  other:18,   img:"https://www.poppersupershop.com/media/catalog/product/cache/6c43fdaad6ce94922deeec5db487b9fc/b/a/bang-aroma-10ml-10pack.jpg"},
+  {id:33, name:"Throb Hard XXX 10ml",                   size:"10ml",     price:3.50,  orig:5.00,  inStore:0,   other:2,    img:"uploaded_files/throb_hard.jpg"},
+  {id:34, name:"Purple Haze 10ml",                      size:"10ml",     price:3.50,  orig:5.00,  inStore:20,  other:60,   img:"uploaded_files/purple_haze.jpg"},
+  {id:35, name:"Hardcore 10ml",                         size:"10ml",     price:3.50,  orig:5.00,  inStore:34,  other:46,   img:"uploaded_files/hard_core_10ml.jpg"},
+  {id:36, name:"High Tech 10ml",                        size:"10ml",     price:3.50,  orig:5.00,  inStore:15,  other:48,   img:"uploaded_files/hi_tech.jpg"},
+  {id:37, name:"Tribal Juice 15ml",                     size:"15ml",     price:4.20,  orig:6.00,  inStore:23,  other:96,   img:"uploaded_files/triba_juice.jpg"},
+  {id:38, name:"Top 25ml",                              size:"25ml",     price:6.29,  orig:8.99,  inStore:2,   other:17,   img:"uploaded_files/top.jpg"},
+  {id:39, name:"Bottom 25ml",                           size:"25ml",     price:6.29,  orig:8.99,  inStore:0,   other:2,    img:"uploaded_files/bottom.jpg"},
+  {id:40, name:"Original 25ml",                         size:"25ml",     price:6.29,  orig:8.99,  inStore:0,   other:22,   img:"uploaded_files/original.jpg"},
+  {id:41, name:"Jungle Juice Platinum 15ml",            size:"15ml",     price:7.69,  orig:10.99, inStore:12,  other:16,   img:"uploaded_files/jungle_juice_platinum.jpg"},
+  {id:42, name:"Colt Boxed 30ml HEXYL",                 size:"30ml",     price:9.79,  orig:13.99, inStore:42,  other:44,   img:"uploaded_files/Colt Boxed 30ml HEXYL.jpg"},
+  {id:43, name:"Jungle Juice Gold Label Triple Distilled 30ml", size:"30ml", price:9.79, orig:13.99, inStore:36, other:465, img:"uploaded_files/jungle_juice_gold_label.jpg"},
+  {id:44, name:"Jungle Juice Plus 15ml",                size:"15ml",     price:7.69,  orig:10.99, inStore:25,  other:59,   img:"uploaded_files/jungle_juice_plus.jpg"},
+  {id:45, name:"Jungle Juice Plus Retro 25ml",          size:"25ml",     price:9.09,  orig:12.99, inStore:22,  other:259,  img:"uploaded_files/JigglyBumBum plus 30ml.jpg"},
+  {id:46, name:"Jungle Juice Plus Boxed 30ml HEXYL",    size:"30ml",     price:9.79,  orig:13.99, inStore:102, other:133,  img:"uploaded_files/jungle_juice_plus_box.jpg"},
+  {id:47, name:"Jungle Juice Platinum Extreme 30ml",    size:"30ml",     price:10.49, orig:14.99, inStore:25,  other:517,  img:"uploaded_files/jungle_juice_platinum_box.jpg"},
+  {id:48, name:"Rush Special EU Formula 10ml",          size:"10ml",     price:6.29,  orig:8.99,  inStore:59,  other:378,  img:"uploaded_files/rush_original_special_eu.jpg"},
+  {id:49, name:"Rush Special EU Formula 25ml",          size:"25ml",     price:9.09,  orig:12.99, inStore:43,  other:220,  img:"uploaded_files/Rush Special EU Formula 25ml.jpg"},
+  {id:50, name:"Colt 10ml",                             size:"10ml",     price:6.99,  orig:9.99,  inStore:48,  other:437,  img:"uploaded_files/colt 10ml.jpg"},
+  {id:51, name:"Colt Retro 25ml",                       size:"25ml",     price:9.09,  orig:12.99, inStore:48,  other:361,  img:"uploaded_files/colt_brown_bottle.jpg"},
+  {id:52, name:"Jungle Juice Platinum Boxed 30ml HEXYL",size:"30ml",     price:9.79,  orig:13.99, inStore:111, other:191,  img:"uploaded_files/jungle_juice_platinum_alt.jpg"},
+  {id:53, name:"Jungle Juice Platinum Retro 25ml",      size:"25ml",     price:9.09,  orig:12.99, inStore:25,  other:256,  img:"uploaded_files/jungle_juice_platinum_original.jpg"},
+  {id:54, name:"Bator Pentyl 25ml",                     size:"25ml",     price:7.69,  orig:10.99, inStore:19,  other:122,  img:"https://twistedbeastpoppers.com/cdn/shop/files/Bator.jpg?v=1749213344&width=750"},
+  {id:55, name:"Brain Drain Pentyl 25ml",               size:"25ml",     price:7.69,  orig:10.99, inStore:10,  other:99,   img:"uploaded_files/image55.jpg"},
+  {id:56, name:"Hypno Pentyl 25ml",                     size:"25ml",     price:7.69,  orig:10.99, inStore:35,  other:301,  img:"uploaded_files/hypno.jpg"},
+  {id:57, name:"Sissy Pentyl 25ml",                     size:"25ml",     price:7.69,  orig:10.99, inStore:25,  other:54,   img:"uploaded_files/sissy.jpg"},
+  {id:58, name:"Twisted Beast Original Isopropyl 10ml", size:"10ml",     price:4.89,  orig:6.99,  inStore:46,  other:137,  img:"uploaded_files/Twisted Beast Original Isopropyl 10ml.jpg"},
+  {id:59, name:"Twisted Beast Original Isopropyl 25ml", size:"25ml",     price:6.29,  orig:8.99,  inStore:32,  other:221,  img:"uploaded_files/Twisted Beast Original Isopropyl 25ml.jpg"},
+  {id:60, name:"Twisted Black Label Pentyl 10ml",       size:"10ml",     price:4.89,  orig:6.99,  inStore:16,  other:194,  img:"uploaded_files/Twisted Beast Black label 10ml.jpg"},
+  // Page 3
+  {id:61, name:"Twisted Black Label Pentyl 25ml",       size:"25ml",     price:6.99,  orig:9.99,  inStore:27,  other:311,  img:"uploaded_files/Twisted Beast Black label 25ml.jpg"},
+  {id:62, name:"Twisted Beast Isopropyl 18ml",          size:"18ml",     price:5.59,  orig:7.99,  inStore:22,  other:140,  img:"uploaded_files/twisted_beast_isopropyl_nitrite.jpg"},
+  {id:63, name:"Twisted Beast Pentyl 18ml",             size:"18ml",     price:6.99,  orig:9.99,  inStore:38,  other:224,  img:"uploaded_files/image33.jpg"},
+  {id:64, name:"Fist Fuck Isopropyl 25ml",              size:"25ml",     price:6.99,  orig:9.99,  inStore:42,  other:10,   img:"uploaded_files/Fist Fuck Isopropyl 25ml.jpg"},
+  {id:65, name:"Fist Fuck Pentyl & Pentanol 25ml",      size:"25ml",     price:8.39,  orig:11.99, inStore:33,  other:224,  img:"uploaded_files/Fist Fuck Pentyl Pentanol 25ml.jpg"},
+  {id:66, name:"FF 25ml",                               size:"25ml",     price:8.39,  orig:11.99, inStore:5,   other:5,    img:"uploaded_files/image66.jpg"},
+];
+
+const qty = {};
+
+function fmt(n){ return '£'+n.toFixed(2); }
+
+function buildGrid(gridId, from, to){
+  const grid = document.getElementById(gridId);
+  products.slice(from-1, to).forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.id = 'card-'+p.id;
+    card.innerHTML = `
+      <div class="img-wrap"><img src="${p.img}" alt="${p.name}" onerror="this.style.opacity='0.2'"></div>
+      <div class="card-body">
+        <div class="product-name">${p.name}</div>
+        <div class="product-size">${p.size}</div>
+        <div class="price-row">
+          <span class="price-original">${fmt(p.orig)}</span>
+          <span class="price-sale">${fmt(p.price)}</span>
+          <span class="discount-tag">-30%</span>
+        </div>
+        <div class="stock-row">
+          <div class="stock-item"><span class="stock-dot in"></span>In Store: <span class="stock-num">${p.inStore}</span></div>
+          <div class="stock-item"><span class="stock-dot other"></span>Other: <span class="stock-num">${p.other}</span></div>
+        </div>
+        <div class="qty-control">
+          <button class="qty-btn" onclick="changeQty(${p.id},-1)">−</button>
+          <input class="qty-input" type="number" min="0" value="0" id="qty-${p.id}" onchange="setQty(${p.id},this.value)">
+          <button class="qty-btn" onclick="changeQty(${p.id},1)">+</button>
+        </div>
+        <div class="line-total" id="lt-${p.id}"></div>
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+
+function changeQty(id, delta){
+  const input = document.getElementById('qty-'+id);
+  const newVal = Math.max(0, (parseInt(input.value)||0) + delta);
+  input.value = newVal;
+  setQty(id, newVal);
+}
+
+function setQty(id, val){
+  const n = Math.max(0, parseInt(val)||0);
+  document.getElementById('qty-'+id).value = n;
+  qty[id] = n;
+  const p = products.find(x=>x.id===id);
+  const lt = document.getElementById('lt-'+id);
+  const card = document.getElementById('card-'+id);
+  if(n > 0){
+    lt.textContent = `${n} × ${fmt(p.price)} = ${fmt(n*p.price)}`;
+    card.classList.add('has-qty');
+  } else {
+    lt.textContent = '';
+    card.classList.remove('has-qty');
+    delete qty[id];
+  }
+  updateTotals();
+}
+
+function updateTotals(){
+  let items=0, cost=0, saved=0;
+  products.forEach(p => {
+    const q = qty[p.id]||0;
+    if(q>0){ items+=q; cost+=q*p.price; saved+=q*(p.orig-p.price); }
+  });
+  document.getElementById('total-items').textContent = items;
+  document.getElementById('total-cost').textContent = fmt(cost);
+  document.getElementById('total-saved').textContent = fmt(saved);
+}
+
+function clearAll(){
+  products.forEach(p => {
+    const input = document.getElementById('qty-'+p.id);
+    if(input) input.value = 0;
+    const lt = document.getElementById('lt-'+p.id);
+    if(lt) lt.textContent = '';
+    const card = document.getElementById('card-'+p.id);
+    if(card) card.classList.remove('has-qty');
+  });
+  Object.keys(qty).forEach(k => delete qty[k]);
+  updateTotals();
+}
+
+function getOrderedItems(){
+  return products.filter(p => (qty[p.id]||0) > 0);
+}
+
+function buildOrderText(){
+  const name = document.getElementById('cname').value.trim();
+  const biz  = document.getElementById('cbusiness').value.trim();
+  const phone= document.getElementById('cphone').value.trim();
+  const email= document.getElementById('cemail').value.trim();
+  const notes= document.getElementById('cnotes').value.trim();
+  const items = getOrderedItems();
+  if(!items.length) return null;
+
+  let cost=0, orig=0;
+  let lines = items.map(p => {
+    const q = qty[p.id];
+    const line = q * p.price;
+    const lineOrig = q * p.orig;
+    cost += line; orig += lineOrig;
+    return `• ${p.name} (${p.size}) × ${q} = ${fmt(line)}`;
+  });
+
+  const saved = orig - cost;
+  let text = `🛒 JRB AROMA PRODUCTS ORDER\n`;
+  text += `━━━━━━━━━━━━━━━━━━━━━━\n`;
+  if(name)  text += `👤 Name: ${name}\n`;
+  if(biz)   text += `🏪 Business: ${biz}\n`;
+  if(phone) text += `📞 Phone: ${phone}\n`;
+  if(email) text += `📧 Email: ${email}\n`;
+  text += `━━━━━━━━━━━━━━━━━━━━━━\n`;
+  text += lines.join('\n') + '\n';
+  text += `━━━━━━━━━━━━━━━━━━━━━━\n`;
+  text += `Original Total: ${fmt(orig)}\n`;
+  text += `💚 You Save: ${fmt(saved)}\n`;
+  text += `✅ ORDER TOTAL: ${fmt(cost)}\n`;
+  if(notes) text += `📝 Notes: ${notes}\n`;
+  text += `━━━━━━━━━━━━━━━━━━━━━━\n`;
+  text += `Sent via JRB Order Form`;
+  return {text, cost, orig, saved};
+}
+
+function openModal(type){
+  const items = getOrderedItems();
+  if(!items.length){ alert('Please add at least one item to your order.'); return; }
+
+  const name = document.getElementById('cname').value.trim();
+  const biz  = document.getElementById('cbusiness').value.trim();
+  const phone= document.getElementById('cphone').value.trim();
+  const email= document.getElementById('cemail').value.trim();
+  const notes= document.getElementById('cnotes').value.trim();
+
+  // Customer info
+  let custHtml = '';
+  if(name)  custHtml += `<strong>Name:</strong> ${name}<br>`;
+  if(biz)   custHtml += `<strong>Business:</strong> ${biz}<br>`;
+  if(phone) custHtml += `<strong>Phone:</strong> ${phone}<br>`;
+  if(email) custHtml += `<strong>Email:</strong> ${email}<br>`;
+  if(notes) custHtml += `<strong>Notes:</strong> ${notes}<br>`;
+  document.getElementById('modal-customer').innerHTML = custHtml || '<em style="color:rgba(255,255,255,0.35)">No contact details entered</em>';
+
+  // Items
+  let cost=0, orig=0;
+  let itemsHtml = '';
+  items.forEach(p => {
+    const q = qty[p.id];
+    const line = q * p.price;
+    const lineOrig = q * p.orig;
+    cost += line; orig += lineOrig;
+    itemsHtml += `<div class="order-item">
+      <span class="order-item-name">${p.name} <span style="color:rgba(255,255,255,0.4);font-size:10px">(${p.size})</span></span>
+      <span class="order-item-qty">×${q}</span>
+      <span class="order-item-price">${fmt(line)}</span>
+    </div>`;
+  });
+  document.getElementById('modal-items').innerHTML = itemsHtml;
+
+  const saved = orig - cost;
+  document.getElementById('modal-orig').textContent = fmt(orig);
+  document.getElementById('modal-saved').textContent = fmt(saved);
+  document.getElementById('modal-total').textContent = fmt(cost);
+
+  // Action buttons
+  const order = buildOrderText();
+  const waText = encodeURIComponent(order.text);
+  const waUrl = `https://wa.me/${YOUR_WHATSAPP}?text=${waText}`;
+
+  const subject = encodeURIComponent(`JRB Aroma Order${name?' from '+name:''} — ${fmt(cost)}`);
+  const body = encodeURIComponent(order.text);
+  const mailUrl = `mailto:${YOUR_EMAIL}?subject=${subject}&body=${body}`;
+
+  document.getElementById('modal-actions').innerHTML = `
+    <a href="${waUrl}" target="_blank" class="btn btn-whatsapp">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Send via WhatsApp
+    </a>
+    <a href="${mailUrl}" class="btn btn-email">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+      Send via Email
+    </a>`;
+
+  document.getElementById('modal').classList.add('active');
+}
+
+function closeModal(){
+  document.getElementById('modal').classList.remove('active');
+}
+
+document.getElementById('modal').addEventListener('click', function(e){
+  if(e.target === this) closeModal();
+});
+
+// Build grids
+buildGrid('grid-1', 1, 30);
+buildGrid('grid-2', 31, 60);
+buildGrid('grid-3', 61, 66);
