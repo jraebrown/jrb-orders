@@ -8,17 +8,25 @@
   /* Base styles integrated from price_list (2).html[span_4](start_span)[span_4](end_span) */
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
+  html, body {
+    height: 100%;
+  }
+
   body {
     font-family: 'Arial', sans-serif;
     background: #1a1a2e;
     color: #fff;
-    padding-bottom: 80px; /* Space for the sticky checkout bar */
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
   }
 
   .container {
     max-width: 1200px;
     margin: auto;
     padding: 20px;
+    padding-bottom: 100px;
+    flex: 1;
   }
 
   .page-header {
@@ -255,6 +263,7 @@
     align-items: center;
     z-index: 100;
     box-shadow: 0 -5px 15px rgba(0,0,0,0.5);
+    height: 80px;
   }
 
   .totals-info {
@@ -356,7 +365,7 @@
   .btn-close { background: transparent; border: 1px solid rgba(255,255,255,0.3); color: white; margin-top: 10px; }
 
   @media (max-width: 600px) {
-    .checkout-bar { flex-direction: column; gap: 15px; }
+    .checkout-bar { flex-direction: column; gap: 15px; height: auto; }
     .btn-review { width: 100%; }
   }
 </style>
